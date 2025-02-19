@@ -1,27 +1,66 @@
 body {
-
-    background: linear-gradient(70deg, #322d48, #928DAB); 
-}
-h1 { 
-    text-align: center; font-size: 400%; color: rgb(108, 1, 92);text-align: center;
+    background: linear-gradient(to right, #FFD194, #70E1F5); 
+    font-family: "Arial", sans-serif;
+    text-align: center;
 }
 
 .question {
-   text-align: center; color: #322d48; text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2f68a4;
+    padding: 20px;
+    border: 3px solid #83b9f3;
+    border-radius: 10px;
+    background-color: aliceblue;
+    margin: 20px auto;
+    width: 60%;
 }
 
-img {
-   text-align: right; width : 400px; height : 400px; border : 5px solid rgb(0, 49, 101);
+.options button {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(37, 96, 128);
+    background-color: #e3e8ee;
+    border: 3px solid #7bb2ed;
+    border-radius: 10px;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    
 }
 
+.options button:hover {
+    background-color: #4791e1d9;
+    transform: scale(1.1);
+}
 
-button {
-   align-items: center;  font-family: 'Stencil Std, fantasy';font-size: 60%; color: rgb(255, 21, 21) ;background-color: rgb(245, 255, 48);
-    border-radius: 10px; border : 5px solid rgb(161, 210, 229);
+.button-container {
+    margin-top: 2px;
+}
+
+.options {
+    font-family: "Arial", sans-serif; 
+    font-size: 2rem; 
+    font-weight: bold; 
+    color: #2f68a4; 
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+
+}
+
+.button-container {
+    text-align: center;
 }
 
 #next-button {
-
-    font-family: 'Stencil Std, fantasy';font-size: 60%; color: rgb(92, 1, 1) ;background-color: rgb(98, 103, 21);
-    border-radius: 10px; border : 5px solid rgb(61, 83, 91);align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #f09574;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
