@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Game</title>
+<link rel="stylesheet" href="style.css"> 
+
 </head>
 <body>
-    
+	<div id="quiz-container">
+	<!-- Section pour la question -->
+		<div class="question">
+        Combien de départements y-a-t-il en France ? 
+		</div>
+		<!-- Section pour les options -->
+		<div class="options">
+		  <button>1.  Il y a 90 départements</button> <br>
+		  <button>2.  Il y a 97 départements</button> <br>
+		  <button>3.  Il y a 101 départements</button> <br>
+		  <button>4.  Il y a 93 départements</button> <br>
+		</div>
+		
+		<!-- Prévois déjà le design du bouton "suivant" pour passer à la prochaine question -->
+		 <div class="button-container">
+		  <button id="next-button">Suivant</button>
+		</div>
+	</div>
+	<script type="module" src="script.js"></script>
 </body>
 </html>
