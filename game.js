@@ -12,7 +12,7 @@ export const quizz_E = {
         },
         
         {
-          text: "L’Europe est constituée de combien de pays ",
+          text: "L’Europe est constituée de combien de pays ?",
           options: [
             "1. L’europe est constituée de 27 pays",
             "2. L’Europe est constituée de 55 pays",
