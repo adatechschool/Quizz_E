@@ -46,3 +46,5 @@ export const quizz_E = {
         }
       ]
 }
+
+const rejouer = document.querySelector('#replay-button');
