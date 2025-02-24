@@ -43,8 +43,16 @@ export const quizz_E = {
             "4. Une technique de forge médiévale Européenne",
           ],
           correct_answer: "1. Le fait de se méfier du progrès technologique",
-        }
-      ]
+          
+        },
+       
+        
+      ],
+    fin : [
+      {
+        somme: "votre résultat est de "
+      }
+    ]
 }
 
 const rejouer = document.querySelector('#replay-button');
