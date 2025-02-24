@@ -9,7 +9,7 @@ export const quizz_E = {
             "3. Il y a 101 départements",
             "4. Il y a 93 départements",
           ], 
-          correct_answer: "Il y a 101 départements"
+          correct_answer: "3. Il y a 101 départements"
         },
         
         {

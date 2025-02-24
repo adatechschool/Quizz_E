@@ -30,7 +30,7 @@ body {
 }
 
 .options button:hover {
-    background-color: #4791e1d9;
+    background-color: #88bcf3d9;
     transform: scale(1.1);
 }
 
@@ -64,3 +64,4 @@ body {
     cursor: pointer;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
+
