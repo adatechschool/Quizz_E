@@ -8,7 +8,7 @@ const question = document.querySelector('.question')
 const rejouer = document.querySelector('#replay-button')
 
 const bonneReponse = quizz_E.questions[index].correct_answer.trim()
-console.log('Bonne réponse : ' + bonneReponse)
+// console.log('Bonne réponse : ' + bonneReponse)
 
 
 function loadQuestion() {
@@ -25,7 +25,6 @@ function loadQuestion() {
         bouton.textContent = option;
     });
 }
-
 
 
 nextButton.addEventListener('click', () => {
@@ -58,13 +57,13 @@ rejouer.addEventListener('click', () => {
     loadQuestion()
 });
 // faire un forEach de addEventListener sur chaque bouton créé
-optionsBox.addEventListener('click', () => {
+optionsBox.addEventListener('click', (event) => {
     console.log('coucou')
     console.log(optionsBox.innerText)
+    console.log(bonneReponse)
     if (optionsBox.innerText == bonneReponse) {
         score++
         console.log('bonne réponse')
-
     }
     else {
         console.log('bouh')
@@ -73,10 +72,6 @@ optionsBox.addEventListener('click', () => {
     nextButton.disabled = false;
 })
 
-
-
-
-
-
+// pour chaque boutons créer des class pour les réponses = options
 
 loadQuestion()
