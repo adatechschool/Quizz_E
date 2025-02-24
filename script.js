@@ -15,7 +15,6 @@ function loadQuestion() {
     optionsBox.innerHTML = "";
     // let score = 0
     //let i = 1;
-    console.log(index)
     const bonneReponse = quizz_E.questions[index].correct_answer.trim();
 
     // const question = document.querySelector('.question');
@@ -28,6 +27,7 @@ function loadQuestion() {
         optionsBox.appendChild(br);
         optionsBox.appendChild(bouton);
         //i++;
+nextButton.disabled = true;
 
         bouton.textContent = option;
         bouton.addEventListener("click", () => {
@@ -40,8 +40,15 @@ function loadQuestion() {
             else {
                 bouton.style.border = "2px solid red";
             }
-            //   bouton.disabled = true;
             nextButton.disabled = false;
+            let answers = document.querySelectorAll(".options button")
+            answers.forEach((button) => {
+                button.disabled= true;
+
+            })
+            
+    
+
 console.log(score)
         });
     });
@@ -63,7 +70,7 @@ nextButton.addEventListener('click', () => {
         // Si plus de questions, indiquer la fin du quiz
         question.innerText = 'Bravo vous êtes arrivé à la fin du Quiz ! ! ! 🥳';
         resultat.style.display = 'inline-block'
-        resultat.innerText = 'votre resultat est de ' + score;
+        resultat.innerText = 'votre resultat est de ' + score + " / 4";
         // optionsBox.innerHTML = ''; // Effacer les options
         nextButton.style.display = 'none'; // Cacher le bouton Suivant
         rejouer.style.display = 'inline-block'
