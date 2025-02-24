@@ -81,6 +81,8 @@ rejouer.addEventListener('click', () => {
     index = 0
     rejouer.style.display = 'none'
     nextButton.style.display = 'inline-block'
+      resultat.style.display = 'none'
+      score = 0
     loadQuestion()
 });
 
