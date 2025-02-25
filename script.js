@@ -1,38 +1,35 @@
 
 import { quizz_E } from './game.js';
+
 let index = 0;
 const nextButton = document.querySelector('#next-button');
 let optionsBox = document.querySelector('.options');
 const question = document.querySelector('.question')
-
 const rejouer = document.querySelector('#replay-button')
 const resultat = document.querySelector('.resultat')
+
 let score = 0;
-// console.log('Bonne réponse : ' + bonneReponse)
+
 
 
 function loadQuestion() {
     optionsBox.innerHTML = "";
-    // let score = 0
-    //let i = 1;
-    const bonneReponse = quizz_E.questions[index].correct_answer.trim();
 
-    // const question = document.querySelector('.question');
+
+    const bonneReponse = quizz_E.questions[index].correct_answer.trim();
     question.innerText = quizz_E.questions[index].text;
+
     quizz_E.questions[index].options.forEach((option) => {
         let bouton = document.createElement('button');
-       // bouton.classList.add(`button-${i}`);
-
         let br = document.createElement('br');
         optionsBox.appendChild(br);
         optionsBox.appendChild(bouton);
-        //i++;
-nextButton.disabled = true;
-
+        nextButton.disabled = true;
         bouton.textContent = option;
+
         bouton.addEventListener("click", () => {
-            console.log(optionsBox.innerText)
-            if (bouton.innerText === quizz_E.questions[index].correct_answer.trim()) {
+            
+             if (bouton.innerText === quizz_E.questions[index].correct_answer.trim()) {
                 score++
                 bouton.style.border = "5px solid green";
                 bouton.style.backgroundColor = "#6FCF97";
@@ -46,9 +43,9 @@ nextButton.disabled = true;
             nextButton.disabled = false;
             let answers = document.querySelectorAll(".options button")
             answers.forEach((button) => {
-                button.disabled= true;
+                button.disabled = true;
             })
-console.log(score)
+           
         });
     });
 }
@@ -64,14 +61,10 @@ nextButton.addEventListener('click', () => {
         loadQuestion();
     } else {
         optionsBox.innerHTML = "";
-        // let boutonfin = document.createElement('button');
-        // boutonfin.textContent = 'bravo, vous avez terminé'
-        // console.log(boutonfin)
-        // Si plus de questions, indiquer la fin du quiz
+       
         question.innerText = 'Bravo vous êtes arrivé à la fin du Quiz ! ! ! 🥳';
         resultat.style.display = 'inline-block'
         resultat.innerHTML = 'votre resultat est de ' + score + " / 4";
-        // optionsBox.innerHTML = ''; // Effacer les options
         nextButton.style.display = 'none'; // Cacher le bouton Suivant
         rejouer.style.display = 'inline-block'
     }
@@ -79,12 +72,10 @@ nextButton.addEventListener('click', () => {
 
 rejouer.addEventListener('click', () => {
     index = 0
-
     rejouer.style.display = 'none';
     nextButton.style.display = 'inline-block';
-    resultat.style.display='none';
+    resultat.style.display = 'none';
     score = 0
-
     loadQuestion()
 });
 
