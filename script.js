@@ -34,25 +34,25 @@ nextButton.disabled = true;
             console.log(optionsBox.innerText)
             if (bouton.innerText === quizz_E.questions[index].correct_answer.trim()) {
                 score++
-                bouton.style.border = "2px solid green";
+                bouton.style.border = "5px solid green";
+                bouton.style.backgroundColor = "#6FCF97";
+
                 console.log('bonne réponse');
             }
             else {
-                bouton.style.border = "2px solid red";
+                bouton.style.border = "5px solid red";
+                bouton.style.backgroundColor = "#ffb3b3";
             }
             nextButton.disabled = false;
             let answers = document.querySelectorAll(".options button")
             answers.forEach((button) => {
                 button.disabled= true;
-
             })
-            
-    
-
 console.log(score)
         });
     });
 }
+
 
 loadQuestion();
 
@@ -63,14 +63,14 @@ nextButton.addEventListener('click', () => {
         // Afficher la question suivante
         loadQuestion();
     } else {
-        optionsBox.innerHTML = ""
+        optionsBox.innerHTML = "";
         // let boutonfin = document.createElement('button');
         // boutonfin.textContent = 'bravo, vous avez terminé'
         // console.log(boutonfin)
         // Si plus de questions, indiquer la fin du quiz
         question.innerText = 'Bravo vous êtes arrivé à la fin du Quiz ! ! ! 🥳';
         resultat.style.display = 'inline-block'
-        resultat.innerText = 'votre resultat est de ' + score + " / 4";
+        resultat.innerHTML = 'votre resultat est de ' + score + " / 4";
         // optionsBox.innerHTML = ''; // Effacer les options
         nextButton.style.display = 'none'; // Cacher le bouton Suivant
         rejouer.style.display = 'inline-block'
@@ -79,8 +79,10 @@ nextButton.addEventListener('click', () => {
 
 rejouer.addEventListener('click', () => {
     index = 0
-    rejouer.style.display = 'none'
-    nextButton.style.display = 'inline-block'
+    rejouer.style.display = 'none';
+    nextButton.style.display = 'inline-block';
+    resultat.style.display='none';
+    score = 0
     loadQuestion()
 });
 
