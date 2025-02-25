@@ -4,6 +4,20 @@ body {
     text-align: center;
 }
 
+/* couleurs changeantes */
+
+.alarme {
+    animation: random 2s infinite;
+    }
+    
+    @keyframes random {
+    15% { background: #e3ff87; } 
+    30% { background: #ff7c96; } 
+    60% { background: #ef6b30; } 
+    75% { background: #bf69b1; } 
+    }
+
+
 .question {
     font-size: 2rem;
     font-weight: bold;
