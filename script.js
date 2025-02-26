@@ -69,11 +69,21 @@ nextButton.addEventListener('click', () => {
         question.innerText = 'Bravo vous êtes arrivé à la fin du Quiz ! ! ! 🥳';
         resultat.style.display = 'inline-block';
         // fait apparaître le bouton du résultat
-        resultat.innerHTML = 'votre resultat est de ' + score + " / 4";
+        resultat.innerHTML = 'votre resultat est de ' + score + "/" + quizz_E.questions.length;
         nextButton.style.display = 'none'; // Cacher le bouton Suivant
 
         rejouer.style.display = 'inline-block';
-    }
+        
+        if(score >= 2){
+            confetti({
+              particleCount: 800, // Nombre de confettis
+              spread: 200, // Angle de dispersion
+              colors: ["#ff0000", "#ff69b4", "#00ff00", "#0000ff", "#800080"], // Couleurs rouge, rose, vert, bleu
+              origin: { y: 0.6 }, // Position d'origine des confettis
+              shapes: ["stars"], //  (on peut essayer 'circle' ou 'star')
+            });
+    };
+}
 });
 
 rejouer.addEventListener('click', () => {
