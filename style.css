@@ -6,8 +6,17 @@ body {
 
 /* couleurs changeantes */
 
+#quiz-container{
+    min-width: 50%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border-width: 80%;
+    /* border-style: outset; */
+ 
+}
+
 .alarme {
-    animation: random 2s infinite;
+    animation: random 2s 1;
     }
     
     @keyframes random {
@@ -33,19 +42,24 @@ body {
 .options button {
     font-size: 2rem;
     font-weight: bold;
-    color: rgb(37, 96, 128);
-    background-color: #e3e8ee;
-    border: 3px solid #7bb2ed;
+    color: #2f68a4;
+    padding: 20px;
+    border: 3px solid #83b9f3;
     border-radius: 10px;
+    background-color: aliceblue;
+    margin: 20px auto;
+    width: 60%;
     padding: 15px 30px;
     margin: 10px;
+
+    
     cursor: pointer;
     
 }
 
 .options button:hover {
     background-color: #88bcf3d9;
-    transform: scale(1.3);
+    transform: scale(1.1);
 }
 
 .button-container {
@@ -101,13 +115,30 @@ body {
 } */
 
 #progressBar {
+    position: absolute;
+    transform : rotate(270deg);
+    right: -20px;
+    top: 54%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     font-size: 20px;
     font-weight: bold;
-    color: white;
-    background-color: #f09574;
+    color: rgb(71, 39, 199);
+    background-color: #0faadd;
     border: none;
     border-radius: 10px;
-    padding: 12px 25px;
+    padding: 13px 25px;
     cursor: pointer;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    height: 35px;
+    width: 25%;
+    
+}
+
+progress::-webkit-progress-bar {
+    background-color: #fafafa;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #f09574; /* Couleur de la barre de progression */
+    border-radius: 10px;
 }

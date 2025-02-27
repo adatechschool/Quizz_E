@@ -7,6 +7,7 @@ let optionsBox = document.querySelector('.options');
 const question = document.querySelector('.question');
 const rejouer = document.querySelector('#replay-button');
 const resultat = document.querySelector('.resultat');
+let progressBar = document.querySelector('#progressBar');
 
 let index = 0;
 let score = 0;
@@ -42,7 +43,7 @@ function loadQuestion() {
                 bouton.style.backgroundColor = "#ffb3b3";
                 document.body.classList.add("alarme");
             }
-            // lorsque l'utilisateur n'a pas selectionner de réponses, le bouton suivant est incliquable
+            // lorsque l'utilisateur n'a pas selectionné de réponses, le bouton suivant est incliquable
             nextButton.disabled = false;
             let answers = document.querySelectorAll(".options button")
             answers.forEach((button) => {
@@ -51,9 +52,14 @@ function loadQuestion() {
             })
         });
     });
+    bar();
+}
+
+function bar(){
+    let progress = (index + 1)/quizz_E.questions.length * 100;
+    progressBar.value = progress;
 }
 loadQuestion();
-
 
 
 nextButton.addEventListener('click', () => {
@@ -71,7 +77,7 @@ nextButton.addEventListener('click', () => {
         // fait apparaître le bouton du résultat
         resultat.innerHTML = 'votre resultat est de ' + score + "/" + quizz_E.questions.length;
         nextButton.style.display = 'none'; // Cacher le bouton Suivant
-
+        progressBar.style.display = 'none';
         rejouer.style.display = 'inline-block';
         
         if(score >= 2){
@@ -91,6 +97,8 @@ rejouer.addEventListener('click', () => {
     rejouer.style.display = 'none';
     nextButton.style.display = 'inline-block';
     resultat.style.display = 'none';
+    progressBar.style.display = 'none';
     score = 0
+    progressBar.style.display = 'inline-block';
     loadQuestion()
 });
